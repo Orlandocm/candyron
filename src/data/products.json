@@ -1,0 +1,30 @@
+[
+  {
+    "id":1, 
+    "title":"Cupcake",
+    "description":"Chocolate Cupcake",
+    "price":5,"stock": 10,
+    "pictureUrl": "/src/assets/Images/cupcake.jpg"
+  },
+  {
+    "id":2, 
+    "title":"Cokie",
+    "description":"Vainilla Cupcake",
+    "price":12,"stock": 5,
+    "pictureUrl": "/src/assets/Images/cokie.jpg"
+  },
+  {
+    "id":3, 
+    "title":"Cheescake",
+    "price":5,
+    "stock": 6,
+    "pictureUrl": "/src/assets/Images/cheesecake.jpg",
+    "description":"El Cheesecake o tarta de queso es un postre muy popular desde el siglo XX hecho a base de ricota, requesón, queso quark, azúcar y algunas veces otros ingredientes, tales como: huevos, crema de leche o nata, harina, patata, almendras o frutas."
+  },
+  {
+    "id":4, "title":"Brownie","description":"Oreo Cupcake","price":5,"stock": 8,"pictureUrl": "/src/assets/Images/brownie.jpg"
+  },
+  {
+    "id":5, "title":"Macarrons","description":"Red Velvet Cupcake","price":5,"stock": 10,"pictureUrl":"/src/assets/Images/macrrons.jpg"
+  }
+]
