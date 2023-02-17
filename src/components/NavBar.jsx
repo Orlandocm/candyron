@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import React from 'react'
 import { Link } from 'react-router-dom'
 import CartWidger from './CartWidget'
@@ -5,23 +6,31 @@ import Logo from '../assets/Logo.png'
 import '../styles/navbar.css'
 
 const NavBar = () => {
-  const Categories = ['Pasteleria', 'Nosotros', 'Contacto'];
+  const [open, setOpen] = useState(false)
+
   return (
-      <nav className='nav-container'> 
-        <div>
+    <div className="nav-bar">
+        <div className="brand">
           <Link to={`/`}><img className='nav-container-logo' src= { Logo } alt="Logo" /></Link>
           <h4>CANDYRON</h4>
         </div>
-        <ul className='nav-container-list'>
-          {Categories.map((items, list) => 
-            <li className='nav-container-items' key={list}>
-              <Link to={`/itemlist/${items}`} >{items}</Link>
+        <nav>
+          <ul className="nav-list">
+            <li><Link to={'/catalogue' }>Catalogo</Link></li>
+            <li><a onClick={()=> setOpen(!open)}>Categorias ▼</a>
+              {open &&
+                <ul className="nav-dropdown">
+                  <li><Link to= {`/category/${"cupcakes"}`}>Cupcakes</Link></li>
+                  <li><Link to= {`/category/${"cokies"}`}>Cokies</Link></li>
+                  <li><Link to= {`/category/${"macarrons"}`} >Macarros</Link></li>
+                </ul>
+             }
             </li>
-          )}
-        </ul>
+            <li><Link to={'/404'}>About</Link></li>
+          </ul>
+        </nav>
         <CartWidger/>
-      </nav>
-  
+    </div>
   )
 }
 

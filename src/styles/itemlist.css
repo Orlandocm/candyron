@@ -1,26 +1,7 @@
-.list-container {
-  width: 260px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin-top: 20px;
-  box-shadow: 0px 4px 4px #d26c8e;
-  border-radius: 25px;
-  overflow: hidden;
+.item-lis-container{
+  text-align: center;
 }
 
-.list-container-img{
-  width: 260px;
-  height: 241px;
-  transition: all 1s ease;
-}
-
-.list-container-img:hover{
-  transform: scale(1.05);
-}
-
-.btn{
-  margin: 8px 0;
-  width: 116px;
+.item-container-title{
+  padding: 20px 0;
 }

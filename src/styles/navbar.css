@@ -1,34 +1,70 @@
-.nav-container {
-  padding: 10px 0;
+.nav-bar{
+  width: 100%;
   display: flex;
   justify-content: space-around;
   align-items: center;
-  border-bottom: 1px solid white;
+  background: #262626;
 }
 
-.nav-container div {
-  text-align: center;
+.brand{
+  padding-top: 5px;
 }
 
 .nav-container-logo {
   width: 80px;
   height: 80px;
+  transition: all ease 1s;
 }
 
-.nav-container-list {
+.nav-container-logo:hover{
+  transform: scale(1.05);
+}
+
+
+.brand a{
+  text-decoration: none;
+  color: white;
+}
+
+.nav-container{
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 12px;
 }
 
-.nav-container-items {
-  padding: 2px;
-  background-color: #90e4e4  ;
-  border: 1px solid white;
+nav{
+  float: right;
+}
+
+nav ul{
+  display: flex;
+  list-style: none;
+}
+
+nav ul li{
+  display: flex;
+  flex-direction: column;
+}
+
+ nav ul li a{
+  display: block;
+  padding: 0 20px;
+  background: #262626;
+  text-decoration: none;
+  color: #fff;
+}
+
+nav ul li a:hover{
   border-radius: 8px;
+  background: #90e4e4;
+  color: #fff;
 }
 
-.nav-container-items:hover {
-  background-color: #d26c8e ;
+.nav-dropdown{
+  display: flex;
+  flex-direction: row;
+  position: absolute;
+  transform: translatey(30px);
 }
+
+

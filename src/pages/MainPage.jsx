@@ -1,12 +1,11 @@
-import React from 'react'
-import { Outlet } from 'react-router-dom'
-import NavBar from '../components/NavBar'
+import Logo from '../assets/logo.png'
+import '../styles/home.css'
 
 const MainPages = () => {
   return (
-    <div>
-      <NavBar/>
-      <Outlet/>
+    <div className='main-container'>
+      <h1>CANDYRON</h1>
+      <img className='logo' src={Logo} alt="home" />
     </div>
   )
 }

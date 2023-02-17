@@ -4,8 +4,8 @@ import '../styles/error404.css'
 
 const Error404Page = () => {
   return (
-    <div className='container'>
-      <h1>404 Error Page </h1>
+    <div className='container404'>
+      <h1 className='title'>404 Error Page </h1>
       <p class="zoom-area"><b>Page</b>  not fount </p>
       <section class="error-container">
         <span>4</span>

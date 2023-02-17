@@ -1,7 +1,17 @@
-.item-lis-container{
-  text-align: center;
-}
+.container{
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px; 
+} 
 
-.item-container-title{
-  padding: 20px 0;
-}
+.container-item-list{
+  display: flex;
+  /* flex-direction: column; */
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+} 

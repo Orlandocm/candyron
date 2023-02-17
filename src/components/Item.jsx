@@ -1,44 +1,22 @@
-import React, {useState, useEffect} from 'react'
-import { getProducts } from '../services/getProducts'
-import ItemList from './ItemList'
-import Loader from './Loader'
+import React  from 'react'
+import { Link } from 'react-router-dom'
 import '../styles/item.css'
 
-
-const Item = () => {
-  const [items, setItems] = useState([]);
-  const [isLoading, setIsLoading] = useState(true);
-
-  useEffect(()=>{
-    setTimeout(()=>{
-      getProducts().then((products) => {
-        setItems(products)
-        setIsLoading(false)
-      }) 
-    },2000)
-  },[]);
-
-  if (isLoading) return (
-    <Loader/>
-  );
-    
+const ItemList = ({ id, price, title, url, button, stock, category }) => {
   return (
-    <div className='item-container'>
-      {items.map((item)=>{
-        return (
-          <ItemList 
-          key= {item.id} 
-          title= {item.title} 
-          id = {item.id}
-          price= {item.price} 
-          stock= {item.stock}
-          url= {item.pictureUrl}
-          button= {'Mostrar Detalles'}
-          />
-        )
-      })}
-    </div>
-   )
+      <div className='list-container'>
+      <picture>
+      <img className='list-container-img' src={url} alt="" />
+      </picture>
+      <div>
+        <h2>{title}</h2>
+        <p>Catergory: {category}</p>
+        <p>Precio: {price} €</p>
+        <p>stcok: {stock}</p>
+      </div>
+      <Link className='btn' to= {`/item/${id}`}>{button}</Link>
+      </div>
+  )
 }
 
-export default Item
+export default ItemList

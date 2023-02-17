@@ -1,22 +1,26 @@
-import React  from 'react'
-import { Link } from 'react-router-dom'
+import Item from './Item'
 import '../styles/itemlist.css'
 
-const ItemList = ({id,price, title, url, button, stock}) => {
 
+const ItemListContainer = ({ products }) => {
   return (
-    <div className='list-container'>
-      <picture>
-      <img className='list-container-img' src={url} alt="" />
-      </picture>
-      <div>
-        <h2>{title}</h2>
-        <p>Precio: {price} €</p>
-        <p>stcok: {stock}</p>
-      </div>
-      <Link className='btn' to={`/details/${id}`}>{button}</Link>
-    </div>
+    <>
+    {products?.map((item)=>{
+        return (
+          <Item
+          key= {item.id} 
+          title= {item.title} 
+          id = {item.id}
+          price= {item.price} 
+          stock= {item.stock}
+          category= {item.category}
+          url= {item.pictureUrl}
+          button= {'Mostrar Detalles'}
+          />
+        )
+      })}
+    </>
   )
 }
 
-export default ItemList
+export default ItemListContainer

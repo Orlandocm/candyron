@@ -1,20 +1,61 @@
 [
   {
-    "id":1, 
+    "id":1,
+    "category":"cupcakes",
     "title":"Cupcake",
-    "description":"Chocolate Cupcake",
-    "price":5,"stock": 10,
-    "pictureUrl": "/src/assets/Images/cupcake.jpg"
+    "price":5,
+    "stock": 10,
+    "pictureUrl": "/src/assets/Images/cupcake.jpg",
+    "description":"Un cupcake, también conocido como patty cake o fairy cake, es una pequeña tarta individual que se cocina frecuentemente en moldes similares a los empleados para hacer muffins o magdalenas. Antes de que existieran estos moldes, se solían hacer en tazones, ramequines o cazuelas de barro, dándole significado a su nombre en inglés."
   },
   {
-    "id":2, 
+    "id":2,
+    "category":"cupcakes",
+    "title":"Redvelvet Cupcake",
+    "price":5,
+    "stock": 8,
+    "pictureUrl": "/src/assets/Images/RedVelvet.jpg",
+    "description":"Un cupcake, también conocido como patty cake o fairy cake, es una pequeña tarta individual que se cocina frecuentemente en moldes similares a los empleados para hacer muffins o magdalenas. Antes de que existieran estos moldes, se solían hacer en tazones, ramequines o cazuelas de barro, dándole significado a su nombre en inglés."
+  },
+  {
+    "id":3,
+    "category":"cupcakes",
+    "title":"Limon CupCake ",
+    "price":5,
+    "stock": 8,
+    "pictureUrl": "/src/assets/Images/LimonCupCake.jpg",
+    "description":"Un cupcake, también conocido como patty cake o fairy cake, es una pequeña tarta individual que se cocina frecuentemente en moldes similares a los empleados para hacer muffins o magdalenas. Antes de que existieran estos moldes, se solían hacer en tazones, ramequines o cazuelas de barro, dándole significado a su nombre en inglés."
+  },
+  {
+    "id":4, 
+    "category":"cokies",
     "title":"Cokie",
-    "description":"Vainilla Cupcake",
-    "price":12,"stock": 5,
-    "pictureUrl": "/src/assets/Images/cokie.jpg"
+    "price":12,
+    "stock": 5,
+    "pictureUrl": "/src/assets/Images/cokie.jpg",
+    "description":"La galleta (del francés galette) es una preparación culinaria de pequeño tamaño, dulce o salada, horneada y hecha normalmente a base de harina de trigo, huevos, azúcar, mantequilla o aceites vegetales o grasas animales. Puede incluir más ingredientes como otros cereales, pasas, frutos secos, chocolate, saborizantes como la vainilla, el amaranto y el coco entre muchos otros. Pertenece a la repostería."
   },
   {
-    "id":3, 
+    "id":5, 
+    "category":"cokies",
+    "title":"Lava Cokie",
+    "price":12,
+    "stock": 5,
+    "pictureUrl": "/src/assets/Images/lavacokie.jpg",
+    "description":"La galleta (del francés galette) es una preparación culinaria de pequeño tamaño, dulce o salada, horneada y hecha normalmente a base de harina de trigo, huevos, azúcar, mantequilla o aceites vegetales o grasas animales. Puede incluir más ingredientes como otros cereales, pasas, frutos secos, chocolate, saborizantes como la vainilla, el amaranto y el coco entre muchos otros. Pertenece a la repostería."
+  },
+  {
+    "id":6, 
+    "category":"cheescakes",
+    "title":"Strawberry Cheescake",
+    "price":5,
+    "stock": 6,
+    "pictureUrl": "/src/assets/Images/strawberrycheesecake.jpg",
+    "description":"El Cheesecake o tarta de queso es un postre muy popular desde el siglo XX hecho a base de ricota, requesón, queso quark, azúcar y algunas veces otros ingredientes, tales como: huevos, crema de leche o nata, harina, patata, almendras o frutas."
+  },
+  {
+    "id":7, 
+    "category":"cheescakes",
     "title":"Cheescake",
     "price":5,
     "stock": 6,
@@ -22,9 +63,31 @@
     "description":"El Cheesecake o tarta de queso es un postre muy popular desde el siglo XX hecho a base de ricota, requesón, queso quark, azúcar y algunas veces otros ingredientes, tales como: huevos, crema de leche o nata, harina, patata, almendras o frutas."
   },
   {
-    "id":4, "title":"Brownie","description":"Oreo Cupcake","price":5,"stock": 8,"pictureUrl": "/src/assets/Images/brownie.jpg"
+    "id":8, 
+    "category":"brownies",
+    "title":"Brownie",
+    "price":5,"stock": 8,
+    "pictureUrl": "/src/assets/Images/brownie.jpg",
+    "description":"Un brownie es un bizcocho de chocolate pequeño, típico de la gastronomía de Estados Unidos. Se llama así por su color marrón oscuro, o brown en inglés. A veces se cubre con jarabe espeso de chocolate y puede llevar dentro trocitos de nueces, chocolate butterscotch (una especie de toffee crujiente) o mantequilla de maní."
   },
   {
-    "id":5, "title":"Macarrons","description":"Red Velvet Cupcake","price":5,"stock": 10,"pictureUrl":"/src/assets/Images/macrrons.jpg"
+    "id":9, 
+    "category":"macarrons",
+    "title":"Macarrons",
+    "price":5,"stock": 10,
+    "pictureUrl":"/src/assets/Images/macrrons.jpg",
+    "description":"El macaron es un pastelillo redondo, crujiente por fuera y blando por dentro, hecho con una pasta de almendras trituradas, azúcar y claras de huevo. Se presentan normalmente pegados de dos en dos mediante una pasta consistente."
+  },
+  {
+    "id":10, 
+    "category":"macarrons",
+    "title":"Rainbow Macarrons",
+    "price":5,"stock": 10,
+    "pictureUrl":"/src/assets/Images/rainbow.jpg",
+    "description":"El macaron es un pastelillo redondo, crujiente por fuera y blando por dentro, hecho con una pasta de almendras trituradas, azúcar y claras de huevo. Se presentan normalmente pegados de dos en dos mediante una pasta consistente."
   }
 ]
+
+
+
+
