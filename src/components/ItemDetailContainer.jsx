@@ -1,44 +1,40 @@
 import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
-import { getProductById } from '../services/getProductById'
+import Data from '../data/products.json'
 import Loader from './Loader'
-import ItemCount from './ItemCount'
-import '../styles/itemdetail.css'
+import ItemDetail from './ItemDetail'
 
 const ItemDetailContainer = () => {
   const [product, setProduct] = useState([])
   const [isLoading, setIsLoading] = useState(true)
   const { id } = useParams()
 
+  const getProductDetail = () => {
+    return new Promise ((resolve, reject)=> {
+      Data.length === 0 ? reject(new Error("No hay producto")) : setTimeout(() =>{resolve(Data)},2000)
+    })
+  }
+
+  async function fetchData() {
+    setIsLoading(true)
+    try{
+      const detail = await getProductDetail();
+      setProduct(detail.find((item)=> item.id === Number(id)))
+      setIsLoading(false)
+    } catch(err){
+      console.log(err)
+    }
+  }
+  
   useEffect(() => {
-    setTimeout(() => {
-      getProductById(Number(id)).then((item) => {
-        setProduct(item)
-        setIsLoading(false)
-      })
-    }, 500)
-  }, [])
+    fetchData()
+  },[])
 
   if (isLoading) return (<Loader/>)
-
+  
   return (
     <>
-      <h1 className='detail-title'>Detalles del Producto</h1>
-      <div className='detail-container'>
-      <img className='detail-container-img' src= {product.pictureUrl} alt="" />
-      <div className='detail-container-info'>
-        <div className='detail-container-description'>
-          <h1>{product.title}</h1>
-          <p className='detail-description'>{product.description}</p>
-        </div>
-        <div>
-          <h3>Precio: {product.price}€</h3>
-          <p>Stock: {product.stock}</p>
-        </div>
-        <ItemCount stock= {product.stock}/>
-        <button className='btn'>Añadir al carrito</button>
-      </div>
-    </div> 
+      <ItemDetail detail= {product} />
     </>  
   )
 }

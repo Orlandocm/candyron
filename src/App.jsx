@@ -13,7 +13,7 @@ function App () {
       <NavBar/>
       <Routes>
         <Route exact path= '/' element= {<MainPage />} />
-        <Route exact path= '/catalogue' element= {<ItemListContainer />} />
+        <Route exact path= '/catalogue' element= {<ItemListContainer greeting= {"Bienvenidos a Candyron"} />} />
         <Route exact path= '/category/:categoryId' element = {<ItemListContainer />} />
         <Route exact path= '/item/:id' element= {<ItemDetailContainer />} />
         <Route exact path= '/cart' element= {<Cart />} />
