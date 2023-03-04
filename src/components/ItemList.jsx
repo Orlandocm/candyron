@@ -1,8 +1,9 @@
+import React from 'react'
 import Item from './Item'
 import '../styles/itemlist.css'
 
 
-const ItemListContainer = ({ products }) => {
+const ItemList = ({ products }) => {
   return (
     <>
     {products?.map((item)=>{
@@ -23,4 +24,4 @@ const ItemListContainer = ({ products }) => {
   )
 }
 
-export default ItemListContainer
+export default React.memo(ItemList)

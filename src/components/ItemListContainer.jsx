@@ -35,7 +35,7 @@ const ItemListContainer = ({ greeting }) => {
 
   useEffect(()=>{
     fetchData()
-  },[]);
+  },[categoryId]);
 
   if (isLoading) return (
     <Loader/>
@@ -44,15 +44,15 @@ const ItemListContainer = ({ greeting }) => {
   const filter = Data.filter((products)=> products.category === categoryId)
 
   return (
-    <div className='container'>
-      <h1>{ greeting }</h1>
-      <div className='container-item-list'>
-        <>
+      <div className='container-item'>
+        { categoryId ? <h1>{ categoryId }</h1>  : <h1>{ greeting }</h1>}
+        <div className='container-item-list'>
           { categoryId ? <ItemList products={filter} /> : <ItemList products={items} /> }
-        </>
-      </div>
+        </div>
     </div>
+    
+   
    )
 }
 
-export default ItemListContainer
+export default  ItemListContainer

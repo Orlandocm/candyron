@@ -1,8 +1,11 @@
-.detail-title {
-  text-align: center;
+.detail-container {
+  display: flex;
+  justify-content: center;  
+  height: 100vh;
   margin-top: 20px;
 }
-.detail-container{
+
+.detail-container-context{
   position: absolute;
   width: 700px;
   display: flex;
@@ -41,7 +44,4 @@
   align-items: center;
 }
 
-.btn {
-  width: 120px;
-}
 

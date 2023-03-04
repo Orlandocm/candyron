@@ -28,14 +28,13 @@ const ItemDetailContainer = () => {
   
   useEffect(() => {
     fetchData()
-  },[])
+  },[id])
 
   if (isLoading) return (<Loader/>)
   
   return (
-    <>
-      <ItemDetail detail= {product} />
-    </>  
+    
+     <ItemDetail detail= {product} />  
   )
 }
 

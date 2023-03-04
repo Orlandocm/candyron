@@ -3,7 +3,7 @@ import '../styles/home.css'
 
 const MainPages = () => {
   return (
-    <div className='main-container'>
+    <div className='home-container'>
       <h1>CANDYRON</h1>
       <img className='logo' src={Logo} alt="home" />
     </div>

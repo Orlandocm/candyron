@@ -1,17 +1,16 @@
-.container{
-  margin-top: 20px;
+.container-item{
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 10px; 
+  margin-bottom: 50px; 
 } 
 
 .container-item-list{
   display: flex;
-  /* flex-direction: column; */
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
   gap: 10px;
+  margin-bottom: 20px;
 } 
