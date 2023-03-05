@@ -6,7 +6,7 @@ const ItemDetail = ({ detail }) => {
     <div className='detail-container'>
       <h1>Detalles del producto</h1>
       <div className='detail-container-context'>
-          <img className='detail-container-img' src= {detail.pictureUrl} alt="" />
+          <img className='detail-container-img' src= {detail.pictureUrl} alt={detail.title} />
           <div className='detail-container-info'>
             <div className='detail-container-description'>
               <h1>{detail.title}</h1>

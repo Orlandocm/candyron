@@ -20,9 +20,9 @@ const NavBar = () => {
           <li><a className='navbtn' onClick={()=> setOpen(!open)}>Categorias ▼</a>
            {open &&
               <ul className="nav-dropdown">
-                <li className='navbtn-drop'><Link to= {`/category/${"cupcakes"}`} className='navbtn '>Cupcakes</Link></li>
-                 <li className='navbtn-drop'><Link to= {`/category/${"cokies"}`} className='navbtn'>Cokies</Link></li>
-                <li ><Link to= {`/category/${"macarrons"}`} className='navbtn' >Macarros</Link></li>
+                <li className='navbtn-drop'><Link to= {`/category/${"Cupcakes"}`} className='navbtn '>Cupcakes</Link></li>
+                 <li className='navbtn-drop'><Link to= {`/category/${"Cookies"}`} className='navbtn'>Cookies</Link></li>
+                <li ><Link to= {`/category/${"Macarrons"}`} className='navbtn' >Macarros</Link></li>
               </ul>
             }
           </li>

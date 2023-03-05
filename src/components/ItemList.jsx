@@ -6,7 +6,7 @@ import '../styles/itemlist.css'
 const ItemList = ({ products }) => {
   return (
     <>
-    {products?.map((item)=>{
+    {products.map((item)=>{
         return (
           <Item
           key= {item.id} 
@@ -16,8 +16,7 @@ const ItemList = ({ products }) => {
           stock= {item.stock}
           category= {item.category}
           url= {item.pictureUrl}
-          button= {'Mostrar Detalles'}
-          />
+          button= {'Mostrar Detalles'} />
         )
       })}
     </>
