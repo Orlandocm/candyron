@@ -36,7 +36,7 @@ const Cart = () => {
         </div>
         <div className='cart-subtitle'>
           <h2>My Cart</h2>
-          <Link to={'/catalogue'} className='button' href="#">Continua Comprando</Link>
+          <button><Link to={'/catalogue'} href="#">Continua Comprando</Link> </button>
         </div>
         {cart.map((product)=>{
           return(
@@ -64,7 +64,7 @@ const Cart = () => {
           </div>
         </div>
         <div className='context-subtitle-btn' >
-          <a className='button' onClick={()=> clear()}>Vaciar Carrito</a>
+          <button onClick={clear}> Vaciar Carrito </button>
         </div>
           {!cart.length ? <h1>Carrito Vacio</h1> : <Form />}
       </div>

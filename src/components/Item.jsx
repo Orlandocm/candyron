@@ -13,7 +13,7 @@ const ItemList = ({ id, price, title, url, button, stock, category }) => {
         <p>Precio: {price} €</p>
         <p>stcok: {stock}</p>
       </div>
-      <Link className='btn' to={`/item/${id}`}>{button}</Link>
+      <button><Link to={`/item/${id}`}>{button}</Link></button>
       </div>
   )
 }

@@ -1,7 +1,7 @@
 import { useContext } from 'react'
 import { Link } from 'react-router-dom'
 import { CartContext } from '../context/ShoppingCartContext'
-import Cart from '../assets/shoppingcart.png'
+import Cart from '../assets/shoppingcartN.png'
 import '../styles/cartwidget.css'
 
 const CartWidget = () => {

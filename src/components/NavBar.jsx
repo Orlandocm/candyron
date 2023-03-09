@@ -6,30 +6,81 @@ import Logo from '../assets/Logo.png'
 import '../styles/navbar.css'
 
 const NavBar = () => {
-  const [open, setOpen] = useState(false)
+  const [showDropdown, setShowDropdown] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
+  const [isOpenMobile, setIsOpenMobile] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
 
+  const Dropdown = () => {
+    setIsOpen(!isOpen);
+  };
+
+  const DropdownMobile = () => {
+    setIsOpenMobile(!isOpenMobile);
+  };
+
+  const toggleDropdown = () => {
+    setShowDropdown(!showDropdown);
+  };
+
+  const handleResize = () => {
+    if (window.innerWidth <= 768) {
+      setIsMobile(true);
+    } else {
+      setIsMobile(false);
+    }
+  };
+
+  window.addEventListener("resize", handleResize);
   return (
-    <nav className='nav-container'>
-      <div className='navbar-start'>
+
+    <nav className="navbar">
+      <div className='navbar-brand'>
         <Link to={`/`}><img className='navbar-logo' src= { Logo } alt="Logo" /></Link>
-        <h3>Candyron</h3>
-     </div>
-     <div>
-        <ul className="nav-list">
-          <li><Link to={'/catalogue' } className='navbtn'>Catalogo</Link></li>
-          <li><a className='navbtn' onClick={()=> setOpen(!open)}>Categorias ▼</a>
-           {open &&
-              <ul className="nav-dropdown">
-                <li className='navbtn-drop'><Link to= {`/category/${"Cupcakes"}`} className='navbtn '>Cupcakes</Link></li>
-                 <li className='navbtn-drop'><Link to= {`/category/${"Cookies"}`} className='navbtn'>Cookies</Link></li>
-                <li ><Link to= {`/category/${"Macarrons"}`} className='navbtn' >Macarros</Link></li>
-              </ul>
+        {/* <h3>CANDYRON</h3> */}
+      </div>
+      {isMobile ? (
+        <button className="navbar-toggle" onClick={toggleDropdown}>
+          <span className="navbar-toggle-icon">&#9776;</span>
+        </button>
+      ) : (
+        <ul className="navbar-list">
+          <li className="navbar-dropdown-item"> <Link to={'/'}>Inicio</Link></li>
+          <li className='navbar-dropdown-item'><Link to={'/catalogue'} >Catalogo</Link></li>
+          <li className="navbar-dropdown-item" onClick={Dropdown} ><a>Categorias</a>
+            {
+              !isOpen && (
+                <ul className="navbar-dropdown">
+                  <li className='navbar-dropdown-item'><Link to= {`/category/${"Cupcakes"}`}>Cupcakes</Link></li>
+                  <li className='navbar-dropdown-item'><Link to= {`/category/${"Cookies"}`}>Cookies</Link></li>
+                  <li className='navbar-dropdown-item' ><Link to= {`/category/${"Macarrons"}`} >Macarros</Link></li>
+                </ul>
+              )
             }
           </li>
           <li><Link to={'/404'} className='navbtn'>About</Link></li>
         </ul>
-      </div>
-      <CartWidger/>
+      )}
+      {showDropdown && isMobile && (
+        <ul className="navbar-dropdown">
+          <li className="navbar-dropdown-item"> <Link to={'/'}>Inicio</Link></li>
+          <li className="navbar-dropdown-item" onClick={DropdownMobile} >Categorias
+            <ul className="nav-dropdown">
+            {
+              !isOpenMobile && (
+                <ul className="navbar-dropdown">
+                  <li className='navbar-dropdown-item'><Link to= {`/category/${"Cupcakes"}`}>Cupcakes</Link></li>
+                  <li className='navbar-dropdown-item'><Link to= {`/category/${"Cookies"}`}>Cookies</Link></li>
+                  <li ><Link to= {`/category/${"Macarrons"}`} className='navbar-dropdown-item'>Macarros</Link></li>
+                </ul>
+              )
+            }
+            </ul>
+          </li>
+          <li><Link to={'/404'} className='navbtn'>About</Link></li>
+        </ul>
+      )}
+      <CartWidger />
     </nav>
   )
 }
