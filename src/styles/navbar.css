@@ -24,11 +24,11 @@
 .navbtn{
   margin: 5px;
   padding: 5px;
+  border-radius: 8px;
 }
 
 .navbtn:hover {
  background-color: #90e4e4;
- border-radius: 8px;
 }
 
 .navbtn-drop {

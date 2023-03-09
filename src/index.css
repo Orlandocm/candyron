@@ -22,7 +22,7 @@ html {
 a {
   text-decoration: inherit;
   cursor: pointer;
-  color: white;
+  color: #FAFBFB;
   transition: all 1s ease;
 }
 
@@ -46,7 +46,7 @@ button,
   padding: 0.6em 1.2em;
   font-size: .8em;
   font-family: inherit;
-  background-color: #90e4e4 ;
+  background-color: #90e4e4;
   cursor: pointer;
   transition: all 1s ease;
 }

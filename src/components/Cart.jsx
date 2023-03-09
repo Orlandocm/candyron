@@ -26,11 +26,7 @@ const Cart = () => {
     return total
   }
 
-
-  // const totalToPay = (parcialTotal) => {
-  //   total = parcialTotal ++
-  //   return total
-  // }
+  const totalToPay = cart.reduce((accumulator, currentValue)=> accumulator + (currentValue.quantity * currentValue.price),0) 
 
   return (
       <div className='cart-container'>
@@ -64,13 +60,13 @@ const Cart = () => {
             <h2>Total:</h2>
           </div>
           <div>
-            <h3>hola</h3>
+            <h3>{totalToPay} €</h3>
           </div>
         </div>
         <div className='context-subtitle-btn' >
           <a className='button' onClick={()=> clear()}>Vaciar Carrito</a>
         </div>
-          {!Cart ? <h1>Carrito Vacio</h1> : <Form />}
+          {!cart.length ? <h1>Carrito Vacio</h1> : <Form />}
       </div>
   )
 }
