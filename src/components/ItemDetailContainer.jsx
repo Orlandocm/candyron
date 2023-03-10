@@ -15,7 +15,6 @@ const ItemDetailContainer = () => {
     const oneProduct = doc(dataBase, 'Postres', `${id}`)
     getDoc(oneProduct).then((snapshot) => {
       if (snapshot.exists()){
-        const docs = snapshot.data();
         setItem({ ...snapshot.data(), id: snapshot.id })
         setIsLoading(false)
       }

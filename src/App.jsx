@@ -2,7 +2,6 @@ import { BrowserRouter, Routes,Route } from 'react-router-dom'
 import { ShopingCartProvider } from './context/ShoppingCartContext'
 import ItemDetailContainer from './components/ItemDetailContainer'
 import ItemListContainer from './components/ItemListContainer'
-import Error404Page from './pages/Error404Page'
 import NavBar from './components/NavBar'
 import Footer from './components/Footer'
 import MainPage from './pages/MainPage'
@@ -21,7 +20,6 @@ function App () {
             <Route exact path= '/category/:categoryId' element = {<ItemListContainer  />} />
             <Route exact path= '/item/:id' element= {<ItemDetailContainer />} />
             <Route exact path= '/cart' element= {<Cart />} />
-            <Route exact path='/404' element= {<Error404Page/>}/>
           </Routes>
           <Footer/>
         </div>

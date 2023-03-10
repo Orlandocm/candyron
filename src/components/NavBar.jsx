@@ -58,7 +58,6 @@ const NavBar = () => {
               )
             }
           </li>
-          <li><Link to={'/404'} className='navbtn'>About</Link></li>
         </ul>
       )}
       {showDropdown && isMobile && (
@@ -77,7 +76,6 @@ const NavBar = () => {
             }
             </ul>
           </li>
-          <li><Link to={'/404'} className='navbtn'>About</Link></li>
         </ul>
       )}
       <CartWidger />

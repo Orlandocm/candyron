@@ -17,8 +17,7 @@ const Cart = () => {
   }
 
   const clear = () => {
-    const clearCart = []
-    setCart(clearCart)
+    setCart([])
   }
 
   const subtotal = (product) => {
@@ -66,7 +65,7 @@ const Cart = () => {
         <div className='context-subtitle-btn' >
           <button onClick={clear}> Vaciar Carrito </button>
         </div>
-          {!cart.length ? <h1>Carrito Vacio</h1> : <Form />}
+          {!cart.length ? <h1 className='blinking'>Carrito Vacio</h1> : <Form />}
       </div>
   )
 }

@@ -10,7 +10,6 @@ const ItemListContainer = ({ greeting }) => {
   const [items, setItems] = useState([])
   const [isLoading, setIsLoading] = useState(true)
   const { categoryId } = useParams()
-  console.log(categoryId)
 
   useEffect(() => {
     const dataBase = getFirestore()
@@ -23,7 +22,6 @@ const ItemListContainer = ({ greeting }) => {
   }, [])
 
   const filter = items.filter((product) => product.category === categoryId)
-  console.log(items)
   
   if (isLoading) return (
     <Loader/>
