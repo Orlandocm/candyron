@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import { CartContext } from '../context/ShoppingCartContext'
 import CircleP from '../assets/icons/circulo-P.png'
 import '../styles/cart.css'
-import Form from './Form'
+import SendOrder from './SendOrder'
 
 const Cart = () => {
   const [cart, setCart] = useContext(CartContext)
@@ -65,7 +65,7 @@ const Cart = () => {
         <div className='context-subtitle-btn' >
           <button onClick={clear}> Vaciar Carrito </button>
         </div>
-          {!cart.length ? <h1 className='blinking'>Carrito Vacio</h1> : <Form />}
+          {!cart.length ? <h1 className='blinking'>Carrito Vacio</h1> : <SendOrder/>}
       </div>
   )
 }

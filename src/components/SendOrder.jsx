@@ -5,7 +5,7 @@ import { useState } from 'react'
 import '../styles/form.css'
 
 
-const Form = () => {
+const SendOrder = () => {
   const [orderId, setOrderId] = useState('')
   const [name, setName] = useState('')
   const [nameError, setNameError] = useState('')
@@ -13,6 +13,9 @@ const Form = () => {
   const [emailError, setEmailError] = useState('')
   const [textArea, setTextArea] =  useState('')
   const [textAreaError, setTextAreaError] = useState('')
+  const [emailConfirmation, setEmailConfirmation] = useState('')
+  const [emailConfirmationError, setEmailConfirmationError] = useState('')
+  const [isValid, setIsValid] = useState(false);
   const [cart, setCart] = useContext(CartContext)
 
   const dataBase = getFirestore()
@@ -21,6 +24,7 @@ const Form = () => {
     e.preventDefault();
     if (validateForm()) {
       addDoc(ordersCollection, order).then(({ id }) => setOrderId(id));
+      setEmailConfirmation('')
       setCart([])
     }
   }
@@ -38,7 +42,7 @@ const Form = () => {
     let isValid = true;
 
     if (!name) {
-      isValid = false;
+      isValid 
       setNameError('Por favor ingrese su nombre');
     } else {
       setNameError('');
@@ -54,12 +58,24 @@ const Form = () => {
       setEmailError('');
     }
 
+    if (!emailConfirmation) {
+      isValid = false;
+      setEmailConfirmationError('Por favor, confirme su correo electrónico');
+    } else if (email !== emailConfirmation) {
+      isValid = false;
+      setEmailConfirmationError('Los correos electrónicos no coinciden');
+    } else {
+      setEmailConfirmationError('');
+    }
+
     if (!textArea) {
       isValid = false;
       setTextAreaError('Por favor ingrese su mensaje');
     } else {
       setTextAreaError('');
     }
+
+    setIsValid(isValid);
 
     return isValid;
   }
@@ -68,6 +84,7 @@ const Form = () => {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return emailRegex.test(email);
   }
+
 
   return (
     <div className='container'>
@@ -78,13 +95,17 @@ const Form = () => {
           {nameError && <div className="error-message">{nameError}</div>}
           <input onChange={(e) => setEmail(e.target.value)} type="email" placeholder="Email" />
           {emailError && <div className="error-message">{emailError}</div>}
+          <input onChange={(e) => setEmailConfirmation(e.target.value)} type="email" placeholder="Confirm Email" />
+          {emailConfirmationError && <div className="error-message">{emailConfirmationError}</div>}
           <textarea onChange={(e) => setTextArea(e.target.value)} placeholder="Message" />
           {textAreaError && <div className="error-message">{textAreaError}</div>}
-          <input type="submit" value="Enviar Orden" />
+          <input 
+            disabled={email !== emailConfirmation} 
+            className={ email !== emailConfirmation || email === '' ? 'disable' : 'available'} type="submit" value="Enviar Orden" />
         </form>
       </div>
     </div>
   )
 }
 
-export default Form
+export default SendOrder
