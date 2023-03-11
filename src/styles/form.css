@@ -84,6 +84,11 @@
 	text-transform: uppercase;
  }
  
+ @media(max-width: 768px){
+	.form-style-8{
+		width: 360px
+	}
+ }
 
 
 

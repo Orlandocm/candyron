@@ -13,7 +13,7 @@
 }
 
 .cart-subtitle {
-  width: 60%;
+  width: 80%;
   display: flex;
   margin-top: 30px;
   padding: 20px;
@@ -36,7 +36,7 @@
 }
 
 .cart-context {
-  width: 60%;
+  width: 80%;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -46,7 +46,7 @@
 
 .context-title {
   width: 80%;
-  
+  margin-left: 40px; 
 }
 
 .quantity {
@@ -66,19 +66,19 @@
 .context-subtitle {
   margin-right: 80px;
   display: flex;
-  width: 60%;
+  width: 80%;
   justify-content: end;
   line-height: 40px;
   gap: 20px;
 }
 
 .line{
-  width: 60%;
+  width: 80%;
   box-shadow: 1px 1px 1px 1px #262626;
 }
 
 .context-subtitle-btn{
-  width: 60%;
+  width: 80%;
   display: flex;
   justify-content: start;
 }

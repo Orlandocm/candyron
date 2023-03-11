@@ -52,5 +52,11 @@ button:hover {
 	background-color:#34CACA;
 } 
 
+@media (max-width: 768px ) {
+  h1 {
+    font-size: 2.2rem;
+  }
+}
+
 
 
