@@ -37,7 +37,7 @@ const NavBar = () => {
     <nav className="navbar">
       <div className='navbar-brand'>
         <Link to={`/`}><img className='navbar-logo' src= { Logo } alt="Logo" /></Link>
-        {/* <h3>CANDYRON</h3> */}
+        <h3>CANDYRON</h3>
       </div>
       {isMobile ? (
         <button className="navbar-toggle" onClick={toggleDropdown}>
@@ -53,7 +53,8 @@ const NavBar = () => {
                 <ul className="navbar-dropdown">
                   <li className='navbar-dropdown-item'><Link to= {`/category/${"Cupcakes"}`}>Cupcakes</Link></li>
                   <li className='navbar-dropdown-item'><Link to= {`/category/${"Cookies"}`}>Cookies</Link></li>
-                  <li className='navbar-dropdown-item' ><Link to= {`/category/${"Macarrons"}`} >Macarros</Link></li>
+                  <li className='navbar-dropdown-item' ><Link to= {`/category/${"Macarrons"}`} >Macarrons</Link></li>
+                  <li className='navbar-dropdown-item' ><Link to= {`/category/${"Cheescakes"}`} >Cheescake</Link></li>
                 </ul>
               )
             }
@@ -63,11 +64,12 @@ const NavBar = () => {
       {showDropdown && isMobile && (
         <ul className="navbar-dropdown">
           <li className="navbar-dropdown-item"> <Link to={'/'}>Inicio</Link></li>
+          <li className='navbar-dropdown-item'><Link to={'/catalogue'} >Catalogo</Link></li>
           <li className="navbar-dropdown-item" onClick={DropdownMobile} >Categorias
             <ul className="nav-dropdown">
             {
               !isOpenMobile && (
-                <ul className="navbar-dropdown">
+                <ul className="dropdown-mobile">
                   <li className='navbar-dropdown-item'><Link to= {`/category/${"Cupcakes"}`}>Cupcakes</Link></li>
                   <li className='navbar-dropdown-item'><Link to= {`/category/${"Cookies"}`}>Cookies</Link></li>
                   <li ><Link to= {`/category/${"Macarrons"}`} className='navbar-dropdown-item'>Macarros</Link></li>

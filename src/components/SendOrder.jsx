@@ -25,7 +25,7 @@ const SendOrder = () => {
     if (validateForm()) {
       addDoc(ordersCollection, order).then(({ id }) => setOrderId(id));
       setEmailConfirmation('')
-      setCart([])
+      setCart([{"quantity": 0, "price": 0, "id": 0}])
     }
   }
 
@@ -88,7 +88,14 @@ const SendOrder = () => {
 
   return (
     <div className='container'>
+      
       <div className="form-style-8">
+      {orderId.length ? 
+      <>
+        <h2>Garcias por su compra</h2> 
+        <p>Su orden Id: <h3>{orderId}</h3></p> 
+      </> :
+      <>
         <h2>Enviar Orden</h2>
         <form onSubmit={handleSubmit}>
           <input onChange={(e) => setName(e.target.value)} type="text" placeholder="Full Name" />
@@ -102,7 +109,10 @@ const SendOrder = () => {
           <input 
             disabled={email !== emailConfirmation} 
             className={ email !== emailConfirmation || email === '' ? 'disable' : 'available'} type="submit" value="Enviar Orden" />
-        </form>
+        </form> 
+      </>
+      }
+        
       </div>
     </div>
   )

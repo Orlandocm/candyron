@@ -9,6 +9,9 @@ Desarrollamos una tienda virtual de compra de postres de resposteria, donde el u
 * Filtrar productos por categorías _(Tipos de postres, Galletas, Cupcakes entre otros)_.
 * Agregar o eliminar productos a su carrito de compras.
 * Concretar la compra de la totalidad de productos seleccionados.
+* Formulario para realizar orden de compra.
+* Validacion de formulario.
+* Base de datos en Firebase para obtener productos y enviar orden de compra del cliente.
 
 **Así es como funciona:**
 
